@@ -58,9 +58,9 @@ const generatePlayerBoard = (numberOfRows, numberOfColumns) => {
     const row =[];
     for (let columnIndex = 0; columnIndex < numberOfColumns; columnIndex++) {
       row.push(' ');
-    }
+    };
     board.push(row);
-  }
+  };
   return board;
 };
 
@@ -70,17 +70,33 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
     const row = [];
     for (let columnIndex = 0; columnIndex < numberOfColumns; columnIndex++) {
       row.push(null);
-    }
+    };
     board.push(row);
-  }
+  };
+
+  //now we need to actually place the numberOfBombs on to our board
+  let numberOfBombsPlaced = 0;
+  while (numberOfBombsPlaced < numberOfBombs) {
+    //put a bomb in a random row and a random column
+    const randomRowIndex = Math.floor(Math.random() * numberOfRows);
+    const randomColumnIndex = Math.floor(Math.random() * numberOfColumns);
+
+    //now that we have a random row and a column, we want to put a bomb there
+    board[randomRowIndex][randomColumnIndex] = 'B';
+
+    //this line below makes sure that the while loop will eventually end
+    numberOfBombsPlaced++;
+  };
   return board;
 };
 
 
-console.log(generatePlayerBoard(3,4));
-console.log(generateBombBoard(3,4,1));
+const printBoard = board => {
+  console.log(board.map(row => row.join(' | ')).join('\n'));
+}
 
+const playerBoard = generatePlayerBoard(3,3);
+const bombBoard = generateBombBoard(3,3,2);
 
-
-
-
+printBoard(playerBoard);
+printBoard(bombBoard);
