@@ -64,7 +64,21 @@ const generatePlayerBoard = (numberOfRows, numberOfColumns) => {
   return board;
 };
 
+const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
+  const board = [];
+  for (let rowIndex = 0; rowIndex < numberOfRows; rowIndex++) {
+    const row = [];
+    for (let columnIndex = 0; columnIndex < numberOfColumns; columnIndex++) {
+      row.push(null);
+    }
+    board.push(row);
+  }
+  return board;
+};
+
+
 console.log(generatePlayerBoard(3,4));
+console.log(generateBombBoard(3,4,1));
 
 
 
