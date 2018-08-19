@@ -1,9 +1,10 @@
+/*
 //make the board of the player
 const generatePlayerBoard = (numberOfRows, numberOfColumns) => {
   let board = [];
-    for (let i = 1; i < numberOfRows; i++) {
+    for (let i = 0; i < numberOfRows; i++) {
       let row = [];
-        for (let j = 1; j < numberOfColumns; j++) {
+        for (let j = 0; j < numberOfColumns; j++) {
           row.push(' ');
         }
         board.push(row);
@@ -14,9 +15,9 @@ const generatePlayerBoard = (numberOfRows, numberOfColumns) => {
 //make the board of the bomb that will be placed
 const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
   let board = [];
-    for (let i = 1; i < numberOfRows; i++) {
+    for (let i = 0; i < numberOfRows; i++) {
       let row = [];
-        for (let j = 1; j < numberOfColumns; j++) {
+        for (let j = 0; j < numberOfColumns; j++) {
           row.push(null);
         }
         board.push(row);
@@ -41,15 +42,29 @@ const printBoard = (board) => {
 };
 
 //test print the game board
-let playerBoard = generatePlayerBoard(3,4);
-let bombBoard = generateBombBoard(3,4,5);
+let playerBoard = generatePlayerBoard(5,5);
+let bombBoard = generateBombBoard(5,5,3);
 
 console.log('Player Board: ');
 printBoard(playerBoard);
 console.log('Bomb Board: ');
 printBoard(bombBoard);
 
+*/
 
+const generatePlayerBoard = (numberOfRows, numberOfColumns) => {
+  const board = [];
+  for (let rowIndex = 0; rowIndex < numberOfRows; rowIndex++) {
+    const row =[];
+    for (let columnIndex = 0; columnIndex < numberOfColumns; columnIndex++) {
+      row.push(' ');
+    }
+    board.push(row);
+  }
+  return board;
+};
+
+console.log(generatePlayerBoard(3,4));
 
 
 
