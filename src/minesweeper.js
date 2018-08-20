@@ -81,13 +81,19 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
     const randomRowIndex = Math.floor(Math.random() * numberOfRows);
     const randomColumnIndex = Math.floor(Math.random() * numberOfColumns);
 
+    if (board[randomRowIndex][randomColumnIndex] !== 'B') {
     //now that we have a random row and a column, we want to put a bomb there
     board[randomRowIndex][randomColumnIndex] = 'B';
-
     //this line below makes sure that the while loop will eventually end
     numberOfBombsPlaced++;
+    };
+
   };
   return board;
+};
+
+let getNumberOfNeighborBombs = (bombBoard, rowIndex, columnIndex) => {
+
 };
 
 
