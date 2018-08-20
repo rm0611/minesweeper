@@ -86,15 +86,27 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
     board[randomRowIndex][randomColumnIndex] = 'B';
     //this line below makes sure that the while loop will eventually end
     numberOfBombsPlaced++;
-    };
 
+    };
   };
   return board;
 };
 
 let getNumberOfNeighborBombs = (bombBoard, rowIndex, columnIndex) => {
-
+  let neighborOffsets = [
+    [rowOffset, columnOffset],
+    [rowOffset, columnOffset],
+    [rowOffset, columnOffset],
+    [rowOffset, columnOffset],
+    [rowOffset, columnOffset],
+    [rowOffset, columnOffset],
+    [rowOffset, columnOffset],
+    [rowOffset, columnOffset],
+    ];
+  const numberOfRows = bombBoard.length;
+  const numberOfColumns = bombBoard.length.
 };
+
 
 
 const printBoard = board => {
