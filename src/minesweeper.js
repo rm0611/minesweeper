@@ -150,3 +150,21 @@ console.log('Updated Player Board: ')
 printBoard(playerBoard);
 console.log('Bomb Board: ')
 printBoard(bombBoard);
+
+/*
+let restaurant = {
+  _name: 'Italian Bistro',
+  _seatingCapacity: 120;
+  _hasDineInSpecial: true;
+  _entrees: ['Penne', 'Chicken', 'Linguine'],
+
+  set seatingCapacity(newCapacity) {
+    if (typeof newCapacity === 'number') {
+      this._seatingCapacity = newCapacity;
+      console.log('${newCapacity} is a valid number');
+    } else {
+      console.log('Change ${newCapacity} to a number')
+    }
+  }
+};
+*/
