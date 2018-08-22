@@ -140,6 +140,8 @@ const printBoard = board => {
 const playerBoard = generatePlayerBoard(3, 3);
 const bombBoard = generateBombBoard(3, 3, 2);
 
+console.log('Player Board: ')
+printBoard(playerBoard);
 flipTile(playerBoard, bombBoard, 0, 0);
 console.log('Updated Player Board: ')
 printBoard(playerBoard);
