@@ -52,6 +52,8 @@ printBoard(bombBoard);
 
 */
 
+
+//This portion is to generate the board which the players will interact
 const generatePlayerBoard = (numberOfRows, numberOfColumns) => {
   const board = [];
   for (let rowIndex = 0; rowIndex < numberOfRows; rowIndex++) {
@@ -64,6 +66,7 @@ const generatePlayerBoard = (numberOfRows, numberOfColumns) => {
   return board;
 };
 
+//This portion is to generate the board which the bombs will be placed upon
 const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
   const board = [];
   for (let rowIndex = 0; rowIndex < numberOfRows; rowIndex++) {
@@ -132,10 +135,10 @@ const flipTile = (playerBoard, bombBoard, rowIndex, columnIndex) => {
   }
 }; 
 
-
+//this portion is to print the actual board
 const printBoard = board => {
   console.log(board.map(row => row.join(' | ')).join('\n'));
-}
+};
 
 const playerBoard = generatePlayerBoard(3, 3);
 const bombBoard = generateBombBoard(3, 3, 2);
