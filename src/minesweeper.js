@@ -4,17 +4,14 @@ class Game {
   }
   playMove(rowIndex, columnIndex) {
     this._board.flipTile(rowIndex, columnIndex);
-    //If there is bomb at flipped place, tell player LOST
-    //If their is not a bomb, and game is over tell player WIN
-    //
     if (this._board.playerBoard[rowIndex][columnIndex] === 'B') {
       console.log('GAME OVER!');
       this._board.print();
-    }
-    if (this._board.hasSafeTiles()) {
-      console.log('YOU WON!');
+    } else if (this._board.hasSafeTiles()) {
+      console.log('Current Board: ');
+      this._board.print();
     } else {
-      console.log('Current Board:');
+      console.log('Congrats! YOU WON');
       this._board.print();
     }
 
@@ -130,5 +127,6 @@ class Board {
 
 }
 
+/*
 const g = new Game(3, 3, 3);
-g.playMove(0, 0);
+g.playMove(0, 0);*/
