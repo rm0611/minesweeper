@@ -1,10 +1,22 @@
 class Game {
-  
+  constructor(numberOfRows, numberOfColumns, numberOfBombs) {
+    this._board = new Board(numberOfRows, numberOfColumns, numberOfBombs);
+  }
+  playMove(rowIndex, columnIndex) {
+    this._board.flipTile(rowIndex, columnIndex) {
+      if (this._board.playerBoard[rowIndex][columnIndex] === 'B') {
+        console.log('GAME OVER!');
+        this._board.print();
+      }
+      if (!hasSafeTiles()) {
+        console.log('YOU WON!');
+      } else {
+        console.log('Current Board:');
+        this._board.print();
+      }
+    }
+  }
 }
-
-
-
-
 
 
 class Board {
@@ -19,7 +31,7 @@ class Board {
   }
 
   //this portion will allow the user to flip the tile
-  flipTile(flipRow, flipColumn) {
+  flipTile = (flipRow, flipColumn) => {
     if (this._playerBoard[rowIndex][columnIndex] !== ' ') {
       console.log('This tile has already been flipped!');
       return;
@@ -30,9 +42,9 @@ class Board {
     }
     this._numberOfTiles--;
   }
-  
+
   //this portion will display the number of bombs adjacent to the flipped tile
-  getNumberOfNeighborBombs (rowIndex, columnIndex) {
+  getNumberOfNeighborBombs(rowIndex, columnIndex) {
     const neighborOffsets = [
       [-1, -1],
       [-1, 0],
@@ -67,10 +79,11 @@ class Board {
   //this portion is to print the actual board
   print() {
     console.log(this._playerBoard.map(row => row.join(' | ')).join('\n'));
-  
+  };
+
   this._playerBoard = generatePlayerBoard(3, 3);
   this._bombBoard = generateBombBoard(3, 3, 2);
-  }
+  
 
   //This portion is to generate the board which the players will interact
   static generatePlayerBoard(numberOfRows, numberOfColumns) {
@@ -116,7 +129,8 @@ class Board {
 
 }
 
-
+const g = new Game(3, 3, 3);
+g.playMove(0, 0);
 
 /*
 console.log('Player Board: ');
