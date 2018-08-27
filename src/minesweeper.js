@@ -1,3 +1,12 @@
+class Game {
+  
+}
+
+
+
+
+
+
 class Board {
   constructor(numberOfRows, numberOfColumns, numberOfBombs) {
     this._numberOfBombs = numberOfBombs;
@@ -21,10 +30,10 @@ class Board {
     }
     this._numberOfTiles--;
   }
-
+  
   //this portion will display the number of bombs adjacent to the flipped tile
-  getNumberOfNeighborBombs = function(rowIndex, columnIndex) {
-    let neighborOffsets = [
+  getNumberOfNeighborBombs (rowIndex, columnIndex) {
+    const neighborOffsets = [
       [-1, -1],
       [-1, 0],
       [-1, 1],
@@ -34,8 +43,8 @@ class Board {
       [1, 0],
       [1, 1],
     ];
-    this._numberOfRows = this._bombBoard.length;
-    this._numberOfColumns = this._bombBoard[0].length;
+    const numberOfRows = this._bombBoard.length;
+    const numberOfColumns = this._bombBoard[0].length;
     let numberOfBombs = 0;
 
     neighborOffsets.forEach(offset => {
@@ -58,10 +67,10 @@ class Board {
   //this portion is to print the actual board
   print() {
     console.log(this._playerBoard.map(row => row.join(' | ')).join('\n'));
-  }
-
+  
   this._playerBoard = generatePlayerBoard(3, 3);
   this._bombBoard = generateBombBoard(3, 3, 2);
+  }
 
   //This portion is to generate the board which the players will interact
   static generatePlayerBoard(numberOfRows, numberOfColumns) {
@@ -109,29 +118,13 @@ class Board {
 
 
 
-
-console.log('Player Board: ')
-printBoard(playerBoard);
-flipTile(playerBoard, bombBoard, 0, 0);
-console.log('Updated Player Board: ')
-printBoard(playerBoard);
-console.log('Bomb Board: ')
-printBoard(bombBoard);
-
 /*
-let restaurant = {
-  _name: 'Italian Bistro',
-  _seatingCapacity: 120;
-  _hasDineInSpecial: true;
-  _entrees: ['Penne', 'Chicken', 'Linguine'],
+console.log('Player Board: ');
+print(this._playerBoard);
+flipTile(playerBoard, bombBoard, 0, 0);
+console.log('Updated Player Board: ');
+print(_playerBoard);
+console.log('Bomb Board: ');
+print(_bombBoard);
 
-  set seatingCapacity(newCapacity) {
-    if (typeof newCapacity === 'number') {
-      this._seatingCapacity = newCapacity;
-      console.log('${newCapacity} is a valid number');
-    } else {
-      console.log('Change ${newCapacity} to a number')
-    }
-  }
-};
 */
